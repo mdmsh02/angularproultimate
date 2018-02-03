@@ -8,12 +8,18 @@ import { User } from './auth-form/auth-form.interface';
 })
 export class AppComponent {
   title = 'app';
+  rememberMe = false;
+
   createUser(user: User) {
     console.log('Create account', user);
   }
 
   loginUser(user: User) {
-    console.log('Login', user);
+    console.log('Login', user, this.rememberMe);
+  }
+
+  rememberUser(value: boolean) {
+    this.rememberMe = value;
   }
 
 }
